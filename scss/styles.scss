@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+  }
+  
+@import 'nav';
+@import 'tarjetas';
+@import 'contacto';
+@import 'ubicacion';
+@import 'footer';
+@import 'registro';
+@import 'faqs';
+
+  .carrusel img {
+    width: 100%;
+    height: auto;
+  }

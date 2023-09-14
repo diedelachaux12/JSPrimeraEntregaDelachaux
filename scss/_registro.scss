@@ -1,0 +1,144 @@
+.iniciar-registro {
+    display: flex;
+    margin: 100px 0px;
+    height: auto;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+  }
+  
+  .tarjeta-inicio {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 6px solid black;
+    border-radius: 15px;
+    justify-content: start;
+    background-color: #fff5f556;
+    box-shadow: -8px 15px 23px 11px rgba(0, 0, 0, 0.62);
+    -webkit-box-shadow: -8px 15px 23px 11px rgba(0, 0, 0, 0.62);
+    -moz-box-shadow: -8px 15px 23px 11px rgba(0, 0, 0, 0.62);
+  }
+  
+  .formulario-inicio-sesion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .texto-inicio-sesion {
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    font-family: Poppins;
+  }
+  
+  .inputs-inicio-sesion {
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+    margin: 25px;
+    border-radius: 5px;
+    border-color: #6f6566;
+    width: 250px;
+    height: 20px;
+  }
+  
+  .boton-sesion {
+    font-family: Poppins;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 11px;
+    margin-top: 100px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -webkit-box-shadow: 0px 1px 3px #575757;
+    -moz-box-shadow: 0px 1px 3px #575757;
+    box-shadow: 0px 1px 3px #575757;
+    text-shadow: 0px 2px 5px #4a4a4a;
+    border: solid #3e3a3d 2px;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#b81f1f), to(#993535));
+    background: -moz-linear-gradient(top, #b81f1f, #993535);
+  
+    &:hover {
+      background: -webkit-gradient(linear, 0 0, 0 100%, from(#b53232), to(#521111));
+      background: -moz-linear-gradient(top, #b53232, #521111);
+    }
+  }
+  
+  .tarjeta-registro {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 6px solid black;
+    border-radius: 15px;
+    justify-content: center;
+    background-color: #fff5f556;
+    box-shadow: -8px 15px 23px 11px rgba(0, 0, 0, 0.62);
+    -webkit-box-shadow: -8px 15px 23px 11px rgba(0, 0, 0, 0.62);
+    -moz-box-shadow: -8px 15px 23px 11px rgba(0, 0, 0, 0.62);
+  }
+  
+  .formulario-registro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .texto-registro {
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    font-family: Poppins;
+  }
+  
+  .inputs-registro {
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+    border-radius: 5px;
+    border-color: #6f6566;
+    width: 250px;
+    height: 20px;
+  }
+  
+  .boton-registro {
+    font-family: Poppins;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 11px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -webkit-box-shadow: 0px 1px 3px #575757;
+    -moz-box-shadow: 0px 1px 3px #575757;
+    box-shadow: 0px 1px 3px #575757;
+    text-shadow: 0px 2px 5px #4a4a4a;
+    border: solid #3e3a3d 2px;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#b81f1f), to(#993535));
+    background: -moz-linear-gradient(top, #b81f1f, #993535);
+  
+    &:hover {
+      background: -webkit-gradient(linear, 0 0, 0 100%, from(#b53232), to(#521111));
+      background: -moz-linear-gradient(top, #b53232, #521111);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .iniciar-registro {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+      margin: 100px 0px;
+      height: auto;
+  
+      /* justify-content: center; */
+      flex-wrap: wrap;
+    }
+  }

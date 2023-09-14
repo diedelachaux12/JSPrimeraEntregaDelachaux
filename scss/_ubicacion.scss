@@ -1,0 +1,38 @@
+.ubicacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    justify-content: center;
+    padding-top: 50px;
+  }
+  
+  .mapa {
+    margin: 0px 150px 100px;
+  }
+  
+  .material-symbols-outlined {
+    color: white;
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+  }
+  
+  .ubicacion-icono {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+  
+  @media (max-width: 1200px) {
+    .mapa {
+      padding: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .mapa {
+      padding: 50px;
+      margin: 0px;
+    }
+  }
+  

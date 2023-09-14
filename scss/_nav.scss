@@ -1,0 +1,94 @@
+.navegador {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 80px;
+    gap: 50px;
+  
+    img {
+      height: 100%;
+    }
+  }
+  
+  .items-navegador {
+    list-style: none;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    align-items: center;
+    gap: 15px;
+  
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+  
+  .custom-button {
+    background: black;
+    color: white;
+  }
+  
+  .fa-bars {
+    display: none;
+    color: rgb(0, 0, 0);
+  }
+  
+  .drop-btn, .dropdown-menu li a {
+    color: black;
+  }
+  
+  @media (max-width: 768px) {
+    .navegador {
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    .fa-bars {
+      display: flex;
+      justify-content: end;
+      color: white;
+      padding-right: 7%;
+      font-size: 22px;
+      right: 0;
+    }
+  
+    .navegador img {
+      height: 10vh;
+      left: 0;
+    }
+  
+    .items-navegador {
+      position: fixed;
+      display: none;
+      top: 45px;
+      right: 0;
+      width: 240px;
+      height: 100vh;
+      background-color: rgb(0, 0, 0);
+      flex-direction: column;
+      justify-content: start;
+      text-decoration: none;
+      align-items: center;
+    }
+  
+    .item-shop {
+      display: none;
+    }
+  
+    .desplegados {
+      display: block;
+    }
+  
+    .fa-bars:hover + .items-navegador {
+      display: block;
+      top: 0;
+    }
+  
+    .navegador .items-navegador:hover, .item-shop:hover + .desplegados {
+      display: block;
+    }
+  }
