@@ -1,2 +1,4 @@
 Se realizó un simulador de carrito utilizando el metodo push de array visto en la clase del 13/9 para mejorar el simulador.
 Actualmente hay un problema que muestra 2 veces el prompt consultando si se desea agregar un producto, del cual no logro detectar el inconveniente.
+Al iniciar el script se pregunta al usuario si quiere agregar un producto al carrito, si se responde que sí sale un nuevo prompt consultando el nombre del producto, y luego de ingresarlo otro prompt consultando el precio. Esto se carga en el carrito y se continua con el bucle. Al usuario colocar NO en el prompt de si desea agregar otro producto, nos saldrá un alert indicando el precio final del carrito.
+Si el usuario coloca que NO quiere agregar productos en el primer prompt, saldrá una alert de que el carrito se encuentra vacío.
