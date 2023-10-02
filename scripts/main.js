@@ -1,49 +1,81 @@
-// variables para el carrito y el total
-let carrito = [];
-let total = 0;
-
-// Ciclo para agregar productos al carrito
-while (true) {
-  const respuesta = prompt("¿Desea agregar un producto al carrito? (Sí/No)");
-
-  if (respuesta === null) {
-    break; // El usuario canceló el prompt, salimos del bucle
-  }
-
-  if (respuesta.toUpperCase() === "SI") {
-    agregarAlCarrito();
-  } else if (respuesta.toUpperCase() === "NO") {
-    break;
-  } else {
-    alert("Respuesta no válida. Por favor, ingrese 'Sí' o 'No'.");
+class Producto {
+  constructor(nombre, precio) {
+    this.nombre = nombre;
+    this.precio = precio;
   }
 }
+
+// Inicializamos un array para el carrito
+let carrito = [];
 
 // Función para agregar un producto al carrito
-function agregarAlCarrito() {
-  const producto = prompt("Ingrese el nombre del producto:");
+function agregarProducto() {
+  while (true) {
+    const nombre = prompt("Ingrese el nombre del producto:");
 
-  if (producto !== null && producto.trim() !== "") {
+    if (nombre === null) {
+      break; // El usuario canceló el prompt, salimos del bucle
+    }
+
+    if (nombre.trim() === "") {
+      alert("Nombre de producto no válido.");
+      continue; // Continuar al siguiente ciclo si el nombre está vacío
+    }
+
     const precio = parseFloat(prompt("Ingrese el precio del producto:"));
 
-    if (!isNaN(precio)) {
-      carrito.push({ producto, precio });
-      alert(`Producto "${producto}" agregado al carrito.`);
-    } else {
-      alert("Precio no válido. El producto no se agregó al carrito.");
+    if (isNaN(precio)) {
+      alert("Precio no válido.");
+      continue; // Continuar al siguiente ciclo si el precio no es válido
     }
-  } 
+
+    const producto = new Producto(nombre, precio);
+    carrito.push(producto);
+    alert(`Producto "${nombre}" agregado al carrito.`);
+
+    const respuesta = prompt("¿Desea agregar otro producto al carrito? (Sí/No)");
+
+    if (respuesta === null) {
+      break; // El usuario canceló el prompt, salimos del bucle
+    }
+
+    if (respuesta.toLowerCase() === "no") {
+      mostrarTotalCarrito(); // Mostrar el total cuando el usuario responde "NO"
+      break; // Salimos del bucle
+    }
+  }
 }
 
-// Calcular el total de la compra
-for (let i = 0; i < carrito.length; i++) {
-  total += carrito[i].precio;
+// Función para calcular el total de la compra
+function calcularTotal() {
+  let total = 0;
+  for (let i = 0; i < carrito.length; i++) {
+    total += carrito[i].precio;
+  }
+  return total;
 }
 
-// Mostrar el total de la compra
-if (carrito.length > 0) {
-  alert(`El total del valor a pagar es: $${total}`);
-} else {
-  alert("El carrito está vacío. No se realizará ninguna compra.");
+// Función para mostrar el carrito
+function mostrarCarrito() {
+  if (carrito.length > 0) {
+    console.log("Carrito de compras:");
+    for (let i = 0; i < carrito.length; i++) {
+      console.log(`Producto: ${carrito[i].nombre}, Precio: $${carrito[i].precio.toFixed(2)}`);
+    }
+  } else {
+    console.log("El carrito está vacío.");
+  }
 }
 
+// Función para mostrar el total del carrito en un alert
+function mostrarTotalCarrito() {
+  const totalCompra = calcularTotal();
+  alert(`El total del valor a pagar es: $${totalCompra.toFixed(2)}`);
+}
+
+// Inicia el proceso
+agregarProducto(); // Esto permite al usuario agregar productos al carrito.
+
+
+// Función para mostrar el carrito y el total al final
+mostrarCarrito();
