@@ -1,81 +1,87 @@
-class Producto {
-  constructor(nombre, precio) {
-    this.nombre = nombre;
-    this.precio = precio;
+document.addEventListener("DOMContentLoaded", function () {
+  // Obtenemos referencias a elementos HTML
+  const carritoItems = document.getElementById("carrito-items");
+  const carritoTotal = document.getElementById("carrito-total");
+  const vaciarCarritoBtn = document.getElementById("vaciar-carrito");
+
+  // Inicializamos el carrito
+  let carrito = [];
+
+  // Objeto con precios de los productos
+  const preciosProductos = {
+    "Jordan 1 Low": 100,
+    "Air Force 1 '07 Premium": 120,
+    "Air Jordan 1 Mid SE": 110,
+    "Dunk Low Retro 'Panda'": 90
+
+  };
+
+  // Función para actualizar la vista del carrito
+  function actualizarCarrito() {
+    // Limpiamos la vista del carrito
+    carritoItems.innerHTML = "";
+
+    // Calculamos el total
+    let total = 0;
+
+    carrito.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = `${item.nombre} - ${item.precio} USD`;
+
+      const eliminarBtn = document.createElement("button");
+      eliminarBtn.textContent = "Eliminar";
+      eliminarBtn.classList.add("boton-eliminar");
+      eliminarBtn.addEventListener("click", () => {
+        eliminarItemDelCarrito(item);
+      });
+
+      eliminarBtn.style.backgroundColor = "#c62d1f";
+      eliminarBtn.style.color = "white";
+      eliminarBtn.style.border = "none";
+      eliminarBtn.style.padding = "5px 10px";
+      eliminarBtn.style.borderRadius = "4px";
+      eliminarBtn.style.cursor = "pointer";
+      eliminarBtn.style.fontSize = "14px";
+
+      li.appendChild(eliminarBtn);
+      carritoItems.appendChild(li);
+
+      total += item.precio;
+    });
+
+    carritoTotal.textContent = total;
   }
-}
 
-// Inicializamos un array para el carrito
-let carrito = [];
+  // Función para agregar un item al carrito
+  function agregarAlCarrito(nombre, precio) {
+    carrito.push({ nombre, precio });
+    actualizarCarrito();
+  }
 
-// Función para agregar un producto al carrito
-function agregarProducto() {
-  while (true) {
-    const nombre = prompt("Ingrese el nombre del producto:");
-
-    if (nombre === null) {
-      break; // El usuario canceló el prompt, salimos del bucle
-    }
-
-    if (nombre.trim() === "") {
-      alert("Nombre de producto no válido.");
-      continue; // Continuar al siguiente ciclo si el nombre está vacío
-    }
-
-    const precio = parseFloat(prompt("Ingrese el precio del producto:"));
-
-    if (isNaN(precio)) {
-      alert("Precio no válido.");
-      continue; // Continuar al siguiente ciclo si el precio no es válido
-    }
-
-    const producto = new Producto(nombre, precio);
-    carrito.push(producto);
-    alert(`Producto "${nombre}" agregado al carrito.`);
-
-    const respuesta = prompt("¿Desea agregar otro producto al carrito? (Sí/No)");
-
-    if (respuesta === null) {
-      break; // El usuario canceló el prompt, salimos del bucle
-    }
-
-    if (respuesta.toLowerCase() === "no") {
-      mostrarTotalCarrito(); // Mostrar el total cuando el usuario responde "NO"
-      break; // Salimos del bucle
+  // Función para eliminar un item del carrito
+  function eliminarItemDelCarrito(item) {
+    const index = carrito.indexOf(item);
+    if (index !== -1) {
+      carrito.splice(index, 1);
+      actualizarCarrito();
     }
   }
-}
 
-// Función para calcular el total de la compra
-function calcularTotal() {
-  let total = 0;
-  for (let i = 0; i < carrito.length; i++) {
-    total += carrito[i].precio;
-  }
-  return total;
-}
+  // Manejadores de eventos para los botones "Comprar"
+  const botonesComprar = document.querySelectorAll(".boton-comprar");
+  botonesComprar.forEach(boton => {
+    boton.addEventListener("click", () => {
+      const tarjeta = boton.closest(".tarjeta");
+      const nombre = tarjeta.querySelector(".titulo-tarjeta").textContent;
+      const precio = preciosProductos[nombre]; // Obtener el precio del objeto
+      agregarAlCarrito(nombre, precio);
+    });
+  });
 
-// Función para mostrar el carrito
-function mostrarCarrito() {
-  if (carrito.length > 0) {
-    console.log("Carrito de compras:");
-    for (let i = 0; i < carrito.length; i++) {
-      console.log(`Producto: ${carrito[i].nombre}, Precio: $${carrito[i].precio.toFixed(2)}`);
-    }
-  } else {
-    console.log("El carrito está vacío.");
-  }
-}
+  // Manejador de evento para el botón "Vaciar Carrito"
+  vaciarCarritoBtn.addEventListener("click", () => {
+    carrito = [];
+    actualizarCarrito();
+  });
+});
 
-// Función para mostrar el total del carrito en un alert
-function mostrarTotalCarrito() {
-  const totalCompra = calcularTotal();
-  alert(`El total del valor a pagar es: $${totalCompra.toFixed(2)}`);
-}
-
-// Inicia el proceso
-agregarProducto(); // Esto permite al usuario agregar productos al carrito.
-
-
-// Función para mostrar el carrito y el total al final
-mostrarCarrito();
