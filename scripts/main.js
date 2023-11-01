@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const carritoTotal = document.getElementById("carrito-total");
   const vaciarCarritoBtn = document.getElementById("vaciar-carrito");
 
-  // Inicializamos el carrito
-  let carrito = [];
+     // Inicializamos el carrito desde el Local Storage
+     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
   // Objeto con precios de los productos
   const preciosProductos = {
