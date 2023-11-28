@@ -1,23 +1,22 @@
 [
-    {
-      "nombre": "Jordan 1 Low",
-      "descripcion": "¿Negro clásico o negro siempre impecable? Con este AJ1 de perfil bajo no tienes por qué elegir.",
-      "precio": 150
-    },
-    {
-      "nombre": "Air Force 1 '07 Premium",
-      "descripcion": "Para celebrar 40 años de expansión de los límites del deporte y la moda, este AF1 combina elementos de lanzamientos entrañables.",
-      "precio": 120
-    },
-    {
-      "nombre": "Air Jordan 1 Mid SE",
-      "descripcion": "Con este AJ1 de perfil medio, no tienes que elegir un color favorito. Los paneles contrastantes hacen que estos calzados se destaquen.",
-      "precio": 130
-    },
-    {
-      "nombre": "Dunk Low Retro 'Panda'",
-      "descripcion": "Con un estilo hogareño y mucha frescura, esta versión alegre del Dunk Low es la combinación perfecta.",
-      "precio": 110
-    }
-  ]
-  
+  {
+    "nombre": "Jordan 1 Low",
+    "descripcion": "¿Negro clásico o negro siempre impecable? Con este AJ1 de perfil bajo no tienes por qué elegir.",
+    "precio": 150
+  },
+  {
+    "nombre": "Air Force 1 '07 Premium",
+    "descripcion": "Para celebrar 40 años de expansión de los límites del deporte y la moda, este AF1 combina elementos de lanzamientos entrañables.",
+    "precio": 120
+  },
+  {
+    "nombre": "Air Jordan 1 Mid SE",
+    "descripcion": "Con este AJ1 de perfil medio, no tienes que elegir un color favorito. Los paneles contrastantes hacen que estos calzados se destaquen.",
+    "precio": 130
+  },
+  {
+    "nombre": "Dunk Low Retro 'Panda'",
+    "descripcion": "Con un estilo hogareño y mucha frescura, esta versión alegre del Dunk Low es la combinación perfecta.",
+    "precio": 110
+  }
+]
